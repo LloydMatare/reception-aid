@@ -1,0 +1,939 @@
+[
+  {
+    "_id": "69450c6dc5d6f855b3115234",
+    "createdAt": "2025-12-19T08:27:25.062Z",
+    "updatedAt": "2025-12-19T08:27:25.062Z",
+    "from": "Compulink",
+    "senderType": "outgoing",
+    "to": "ZAMCO",
+    "receivedAt": "2025-12-19T08:43:39.143Z",
+    "status": "received",
+    "weight": "",
+    "dimensions": "",
+    "notes": "3423",
+    "items": [
+      { "description": "HP Laptop", "serialNumbers": ["5cd24004bj", "5cd240046"] }
+    ]
+  },
+  {
+    "_id": "69453e3e8bab49e1b608c72d",
+    "createdAt": "2025-12-19T11:59:58.592Z",
+    "updatedAt": "2025-12-19T11:59:58.593Z",
+    "from": "compulink",
+    "senderType": "outgoing",
+    "to": "Mr Tawanda Shumba",
+    "receivedAt": "2025-12-19T12:16:09.595Z",
+    "status": "received",
+    "weight": "",
+    "dimensions": "",
+    "notes": "3428",
+    "items": [
+      { "description": "hp 250 G8 2V0W7EG", "serialNumbers": ["CND1084R68"] }
+    ]
+  },
+  {
+    "_id": "696a32c899e46e521e417db6",
+    "createdAt": "2026-01-16T12:44:56.424Z",
+    "updatedAt": "2026-01-16T12:44:56.424Z",
+    "from": "Chiwox",
+    "senderType": "incoming",
+    "to": "Netone",
+    "receivedAt": "2026-01-16T13:01:22.611Z",
+    "status": "received",
+    "weight": "",
+    "dimensions": "",
+    "notes": "",
+    "items": [
+      {
+        "description": "Samsung Galaxy S24",
+        "serialNumbers": ["R5CY22XZ2GN", "R5CXC08B5BK", "R5CY52EXHEY", "RFCX937564Y", "R5CXA17WDK"]
+      }
+    ]
+  },
+  {
+    "_id": "696f3f22d2c31282f5ac6978",
+    "createdAt": "2026-01-20T08:38:58.654Z",
+    "updatedAt": "2026-01-20T08:38:58.655Z",
+    "from": "TV SALES AND HOME",
+    "senderType": "incoming",
+    "to": "COMPULINK SYSTEMES",
+    "receivedAt": "2026-01-20T08:55:22.960Z",
+    "status": "received",
+    "weight": "",
+    "dimensions": "",
+    "notes": "",
+    "items": [
+      {
+        "description": "SAMSUNG 55INCH TV  10",
+        "serialNumbers": [
+          "OB253K6Y900272",
+          "OB253K6Y700246",
+          "0B253K4Y800005",
+          "OB253K6Y8000059",
+          "OB253K6Y800044",
+          "OB253K6Y900241",
+          "OB253K4YBOOO24",
+          "OB2534YBK6Y70024",
+          "0B253K6Y00430",
+          "0B253K6Y700429"
+        ]
+      }
+    ]
+  },
+  {
+    "_id": "696f6c76f6b870a05cff2656",
+    "createdAt": "2026-01-20T11:52:22.151Z",
+    "updatedAt": "2026-01-20T11:52:22.152Z",
+    "from": "Old Mutual",
+    "senderType": "incoming",
+    "to": "COMPULINK SYSTEMES",
+    "receivedAt": "2026-01-20T12:08:46.557Z",
+    "status": "received",
+    "weight": "",
+    "dimensions": "",
+    "notes": "",
+    "items": [
+      {
+        "description": "HPZBOOK FIFEFLY 16INCH G10 (1) NOT SWITCHING ON",
+        "serialNumbers": ["5CG4192ZX"]
+      }
+    ]
+  },
+  {
+    "_id": "696f8528f49f2399817009b8c",
+    "createdAt": "2026-01-20T13:37:44.757Z",
+    "updatedAt": "2026-01-20T13:37:44.757Z",
+    "from": "COMPULINK SYSTEMS",
+    "senderType": "outgoing",
+    "to": "ZB NATAL",
+    "receivedAt": "2026-01-20T13:54:09.225Z",
+    "status": "received",
+    "weight": "",
+    "dimensions": "",
+    "notes": "",
+    "items": [
+      {
+        "description": "SAMSUNG 55\"4K CRYSTAL UHD HDR TIZEN SMART UA55U8000FUXKE",
+        "serialNumbers": [
+          "0B253K6Y900272",
+          "0B253K6Y700246",
+          "0B253K4Y800005",
+          "0B253K6Y8000059",
+          "0B253KY800044",
+          "0B253K6Y900241",
+          "0B253K4YB00024",
+          "0B22534YBK6Y70024",
+          "0B253K6Y00430",
+          "0B253K6Y700429"
+        ]
+      }
+    ]
+  },
+  {
+    "_id": "69708c9995a56aeaec39795d",
+    "createdAt": "2026-01-21T08:21:45.049Z",
+    "updatedAt": "2026-01-21T08:21:45.049Z",
+    "from": "COMPULINK SYSTEMS",
+    "senderType": "outgoing",
+    "to": "ZESA",
+    "receivedAt": "2026-01-21T08:38:09.630Z",
+    "status": "received",
+    "weight": "",
+    "dimensions": "",
+    "notes": "",
+    "items": [
+      { "description": "(1) Epson Projector EH -TW7100", "serialNumbers": ["X70F5100016"] }
+    ]
+  },
+  {
+    "_id": "697092ee265bd56469f38236",
+    "createdAt": "2026-01-21T08:48:46.664Z",
+    "updatedAt": "2026-01-21T08:48:46.664Z",
+    "from": "OLD MUTUAL",
+    "senderType": "incoming",
+    "to": "COMPULINK SYSTEMES",
+    "receivedAt": "2026-01-21T09:05:11.191Z",
+    "status": "received",
+    "weight": "",
+    "dimensions": "",
+    "notes": "",
+    "items": [
+      { "description": "HP Zbook Firefly 16inch g10", "serialNumbers": ["5cg4192zx"] }
+    ]
+  },
+  {
+    "_id": "697093b56db982bcb758aac3",
+    "createdAt": "2026-01-21T08:52:05.214Z",
+    "updatedAt": "2026-01-21T08:52:05.214Z",
+    "from": "NEMSTECH SUPPLIES",
+    "senderType": "incoming",
+    "to": "COMPULINK SYSTEMES",
+    "receivedAt": "2026-01-21T09:08:29.703Z",
+    "status": "received",
+    "weight": "",
+    "dimensions": "",
+    "notes": "",
+    "items": [
+      { "description": "(2) AE 5Way Surge Protectors", "serialNumbers": ["0"] }
+    ]
+  },
+  {
+    "_id": "69709a5906e03d3416a88230",
+    "createdAt": "2026-01-21T09:20:25.281Z",
+    "updatedAt": "2026-01-21T10:00:04.167Z",
+    "from": "COMPULINK SYSTEMS",
+    "senderType": "outgoing",
+    "to": "NBSZ",
+    "receivedAt": "2026-01-21T09:36:49.622Z",
+    "status": "collected",
+    "collectedAt": "2026-01-21T10:16:18.694Z",
+    "weight": "",
+    "dimensions": "",
+    "notes": "",
+    "items": [
+      { "description": "(2) 5way Surge  Protector", "serialNumbers": ["0"] }
+    ]
+  },
+  {
+    "_id": "6970c2a0fb764cdf45f1c6e5",
+    "createdAt": "2026-01-21T12:12:16.683Z",
+    "updatedAt": "2026-01-21T12:12:16.683Z",
+    "from": "COMPULINK SYSTEMS",
+    "senderType": "outgoing",
+    "to": "First Mutual",
+    "receivedAt": "2026-01-21T12:28:41.975Z",
+    "status": "received",
+    "weight": "",
+    "dimensions": "",
+    "notes": "",
+    "items": [
+      { "description": "(3)26A Catridge", "serialNumbers": ["0"] }
+    ]
+  },
+  {
+    "_id": "6970c8ab1220d3c2db5acc20",
+    "createdAt": "2026-01-21T12:38:03.307Z",
+    "updatedAt": "2026-01-21T12:38:03.307Z",
+    "from": "COMPULINK SYSTEMS",
+    "senderType": "outgoing",
+    "to": "Potraz",
+    "receivedAt": "2026-01-21T12:54:28.662Z",
+    "status": "received",
+    "weight": "",
+    "dimensions": "",
+    "notes": "",
+    "items": [
+      { "description": "(2)SHL R320 Portable SSD HardDrive", "serialNumbers": ["0"] }
+    ]
+  },
+  {
+    "_id": "6970cffaa7bbf8651e304546",
+    "createdAt": "2026-01-21T13:09:14.140Z",
+    "updatedAt": "2026-01-21T13:09:14.140Z",
+    "from": "First Pack Services",
+    "senderType": "incoming",
+    "to": "COMPULINK SYSTEMES",
+    "receivedAt": "2026-01-21T13:25:39.588Z",
+    "status": "received",
+    "weight": "",
+    "dimensions": "",
+    "notes": "",
+    "items": [
+      { "description": "(1) HP Probook 450 450 For Repair ", "serialNumbers": ["5CD237K9M4"] }
+    ]
+  },
+  {
+    "_id": "6970d0c59d4047902f77911f",
+    "createdAt": "2026-01-21T13:12:37.271Z",
+    "updatedAt": "2026-01-21T13:12:37.272Z",
+    "from": "First Pack Services",
+    "senderType": "incoming",
+    "to": "COMPULINK SYSTEMES",
+    "receivedAt": "2026-01-21T13:29:02.668Z",
+    "status": "received",
+    "weight": "",
+    "dimensions": "",
+    "notes": "",
+    "items": [
+      { "description": "(1)HPZbook Firefly G11 Motherboard", "serialNumbers": ["5CG4386LK2"] }
+    ]
+  },
+  {
+    "_id": "6970dfd21d957992a4192b55",
+    "createdAt": "2026-01-21T14:16:50.986Z",
+    "updatedAt": "2026-01-21T14:16:50.986Z",
+    "from": "Fusertec Technologies",
+    "senderType": "incoming",
+    "to": "COMPULINK SYSTEMES",
+    "receivedAt": "2026-01-21T14:33:16.329Z",
+    "status": "received",
+    "weight": "",
+    "dimensions": "",
+    "notes": "",
+    "items": [
+      { "description": "(10) HpM10 Wired Mouse", "serialNumbers": ["0"] }
+    ]
+  },
+  {
+    "_id": "6971dc4836c3866f69315ac6",
+    "createdAt": "2026-01-22T08:14:00.943Z",
+    "updatedAt": "2026-01-22T08:15:46.534Z",
+    "from": "CAOMPULINK SYSTEMS",
+    "senderType": "incoming",
+    "to": "MINERVA",
+    "receivedAt": "2026-01-22T08:30:26.464Z",
+    "status": "collected",
+    "collectedAt": "2026-01-22T08:32:09.297Z",
+    "weight": "",
+    "dimensions": "",
+    "notes": "",
+    "items": [
+      { "description": "(8)M10 HP Wired Mouse", "serialNumbers": ["0"] }
+    ]
+  },
+  {
+    "_id": "6971dfbdadae58525e25cad5",
+    "createdAt": "2026-01-22T08:28:45.479Z",
+    "updatedAt": "2026-01-22T08:28:45.480Z",
+    "from": "COMPULINK SYSTEMS",
+    "senderType": "outgoing",
+    "to": "CABS NORTHRIDGE ",
+    "receivedAt": "2026-01-22T08:45:10.943Z",
+    "status": "received",
+    "weight": "",
+    "dimensions": "",
+    "notes": "",
+    "items": [
+      {
+        "description": "(1) HP Accessories Rechargable Active Pen G3",
+        "serialNumbers": ["3CP50309Y0"]
+      }
+    ]
+  },
+  {
+    "_id": "6971e3722221cd3f0427180c",
+    "createdAt": "2026-01-22T08:44:34.175Z",
+    "updatedAt": "2026-01-22T08:44:34.175Z",
+    "from": "AXIZ",
+    "senderType": "incoming",
+    "to": "COMPULINK SYSTEMES",
+    "receivedAt": "2026-01-22T09:00:59.966Z",
+    "status": "received",
+    "weight": "",
+    "dimensions": "",
+    "notes": "",
+    "items": [
+      {
+        "description": "65C43AA HP Accessories Rechargable ActivePen G3",
+        "serialNumbers": ["3CP50309Y0"]
+      }
+    ]
+  },
+  {
+    "_id": "69721403cccbad190b5270c1",
+    "createdAt": "2026-01-22T12:11:47.063Z",
+    "updatedAt": "2026-01-22T12:11:47.064Z",
+    "from": "NITI DISTRIBUTORS",
+    "senderType": "incoming",
+    "to": "COMPULINK SYSTEMES",
+    "receivedAt": "2026-01-22T12:28:13.030Z",
+    "status": "received",
+    "weight": "",
+    "dimensions": "",
+    "notes": "",
+    "items": [
+      {
+        "description": "N75881-004 HP Series 5527SP (7)",
+        "serialNumbers": [
+          "3CM42110LV",
+          "3CM42110NF",
+          "3CM42110NT",
+          "3CM42110NK",
+          "3CM42110NL",
+          "3CM42111T4",
+          "3CM42110NM"
+        ]
+      }
+    ]
+  },
+  {
+    "_id": "697215205b636316b43ed14c",
+    "createdAt": "2026-01-22T12:16:32.933Z",
+    "updatedAt": "2026-01-22T12:16:32.933Z",
+    "from": "CHIWOX ",
+    "senderType": "incoming",
+    "to": "COMPULINK SYSTEMS",
+    "receivedAt": "2026-01-22T12:32:59.828Z",
+    "status": "received",
+    "weight": "",
+    "dimensions": "",
+    "notes": "",
+    "items": [
+      {
+        "description": "14 INCH Macbook Pro M4 Pro Chip MX2J3M/A (3)",
+        "serialNumbers": ["CIXR20J2FV", "LQWQO654JL", "HD60GJYVNX"]
+      }
+    ]
+  },
+  {
+    "_id": "697215205b636316b43ed14c",
+    "createdAt": "2026-01-22T12:16:32.933Z",
+    "updatedAt": "2026-01-22T12:16:32.933Z",
+    "from": "CHIWOX ",
+    "senderType": "incoming",
+    "to": "COMPULINK SYSTEMS",
+    "receivedAt": "2026-01-22T12:32:59.828Z",
+    "status": "received",
+    "weight": "",
+    "dimensions": "",
+    "notes": "",
+    "items": [
+      {
+        "description": "14 INCH Macbook Pro M4 Pro Chip MX2J3M/A (3)",
+        "serialNumbers": ["CIXR20J2FV", "LQWQO654JL", "HD60GJYVNX"]
+      }
+    ]
+  },
+  {
+    "_id": "697222aeff2d32ee2cf638a9",
+    "createdAt": "2026-01-22T13:14:22.472Z",
+    "updatedAt": "2026-01-22T13:14:22.473Z",
+    "from": "COMPULINK SYSTEMS",
+    "senderType": "outgoing",
+    "to": "Speedlink Cargo",
+    "receivedAt": "2026-01-22T13:30:48.086Z",
+    "status": "received",
+    "weight": "",
+    "dimensions": "",
+    "notes": "",
+    "items": [
+      { "description": "(3) Logitec Mouse", "serialNumbers": ["0"] }
+    ]
+  },
+  {
+    "_id": "6972276c8bf8380be5497f51",
+    "createdAt": "2026-01-22T13:34:36.170Z",
+    "updatedAt": "2026-01-22T13:34:36.171Z",
+    "from": "COMPULINK SYSTEMS",
+    "senderType": "outgoing",
+    "to": "MEFMI",
+    "receivedAt": "2026-01-22T13:51:01.963Z",
+    "status": "received",
+    "weight": "",
+    "dimensions": "",
+    "notes": "",
+    "items": [
+      {
+        "description": "(7)               HP Series 5 2FHD Monitor",
+        "serialNumbers": [
+          "3CM4211OLV",
+          "3CM4211ONF",
+          "3CM4211ONT",
+          "3CM4211ONK",
+          "3CM4211ONL",
+          "3CM42111T4",
+          "3CM4211ONM"
+        ]
+      }
+    ]
+  },
+  {
+    "_id": "69722d3e90601c52d2c9fc5b",
+    "createdAt": "2026-01-22T13:59:26.999Z",
+    "updatedAt": "2026-01-22T13:59:26.999Z",
+    "from": "Fusertec Technologies",
+    "senderType": "incoming",
+    "to": "COMPULINK SYSTEMS",
+    "receivedAt": "2026-01-22T14:15:53.152Z",
+    "status": "received",
+    "weight": "",
+    "dimensions": "",
+    "notes": "",
+    "items": [
+      { "description": "M10 HP Wired Mouse (20)", "serialNumbers": ["0"] }
+    ]
+  },
+  {
+    "_id": "697239d5e2ec2b8566e53862",
+    "createdAt": "2026-01-22T14:53:09.706Z",
+    "updatedAt": "2026-01-22T14:53:09.707Z",
+    "from": "Frampol",
+    "senderType": "incoming",
+    "to": "COMPULINK SYSTEMS",
+    "receivedAt": "2026-01-22T15:09:35.949Z",
+    "status": "received",
+    "weight": "",
+    "dimensions": "",
+    "notes": "",
+    "items": [
+      { "description": "Starlink Mini Kit (2)", "serialNumbers": ["kit4m0264087155J", "Kit4m02633228xfd"] }
+    ]
+  },
+  {
+    "_id": "6973273461b035be9913815e",
+    "createdAt": "2026-01-23T07:45:56.991Z",
+    "updatedAt": "2026-01-23T07:46:49.117Z",
+    "from": "COMPULINK SYSTEMS",
+    "senderType": "outgoing",
+    "to": "Potraz",
+    "receivedAt": "2026-01-23T08:02:22.805Z",
+    "status": "collected",
+    "collectedAt": "2026-01-23T08:03:18.009Z",
+    "weight": "",
+    "dimensions": "",
+    "notes": "",
+    "items": [
+      {
+        "description": "(3)Macbook Pro MX2J3 lIQUID XDR RETIN14-INCH Display,M4Pro CHIP 14-CORE CPU (3)Targus bag Classic Clamshelll (2)30tb M.2 type-C USSB 3.1 Portable Solid State Drive",
+        "serialNumbers": ["CJR20J2FV", "LQWO65LJL", "HD60GJYVNX"]
+      }
+    ]
+  },
+  {
+    "_id": "697364a8cbfa9a308f68fed0",
+    "createdAt": "2026-01-23T12:08:08.366Z",
+    "updatedAt": "2026-01-23T12:09:09.272Z",
+    "from": "Old Mutual",
+    "senderType": "incoming",
+    "to": "COMPULINK SYSTEMES",
+    "receivedAt": "2026-01-23T12:24:34.045Z",
+    "status": "collected",
+    "collectedAt": "2026-01-23T12:25:31.126Z",
+    "weight": "",
+    "dimensions": "",
+    "notes": "",
+    "items": [
+      { "description": "(1) HP Zbook G8 Key boardReplacement ", "serialNumbers": ["5CG210BITB"] }
+    ]
+  },
+  {
+    "_id": "6973766da0a9de0aa2feb6fc",
+    "createdAt": "2026-01-23T13:23:57.796Z",
+    "updatedAt": "2026-01-23T13:23:57.796Z",
+    "from": "WESTCO",
+    "senderType": "incoming",
+    "to": "COMPULINK SYSTEMS",
+    "receivedAt": "2026-01-23T13:40:23.760Z",
+    "status": "received",
+    "weight": "",
+    "dimensions": "",
+    "notes": "",
+    "items": [
+      {
+        "description": "Catalyst 91641AP CW6E,TRI BAND 4X4),W/CW91641-E (10)",
+        "serialNumbers": [
+          "KWC292100KD",
+          "KWC292100LA",
+          "KWC292100KH",
+          "KWC292100UQ",
+          "KWC292101JG",
+          "KWC292100KU",
+          "KWC292100L8",
+          "KWC292100LP",
+          "KWC292100M8",
+          "KWC292100JX"
+        ]
+      },
+      {
+        "description": "(1)CISCO CATALYST9800L-WIRELESS CONTROLLER,C9800L-C-K9 C (1CISCO CATALYST 9800L-RMNT WIELSS CONTROLLER RACK MOUNT TRA",
+        "serialNumbers": ["FCL294100D", "C3KBA40398"]
+      }
+    ]
+  },
+  {
+    "_id": "69771076aae559f002facb1d",
+    "createdAt": "2026-01-26T06:57:58.661Z",
+    "updatedAt": "2026-01-26T06:57:58.662Z",
+    "from": "COMPULINK SYSTEMS",
+    "senderType": "outgoing",
+    "to": "MINERVA",
+    "receivedAt": "2026-01-26T07:14:26.027Z",
+    "status": "received",
+    "weight": "",
+    "dimensions": "",
+    "notes": "",
+    "items": [
+      {
+        "description": "(10) Catalyst9164 APC TRI band4x4W CW9164-E",
+        "serialNumbers": [
+          "KKWC292100KD",
+          "KWC292100LA",
+          "KWC292100KH",
+          "KWC292100LIQ",
+          "KWC292101JG",
+          "KWC292100LKU",
+          "KWC292100L8",
+          "KWC292100LP",
+          "KWC292100M8",
+          "KWC292100JX"
+        ]
+      },
+      {
+        "description": "Cisco Catalyst 9800l Wiress Controller C9800l-c-k9-C (1)CiscoCatalyst9800L -RMOT WIRELESS Controller Rack Mount",
+        "serialNumbers": ["FCL294100D", "C3KBA40398"]
+      }
+    ]
+  },
+  {
+    "_id": "697884b082d8ad57ec757da9",
+    "createdAt": "2026-01-27T09:26:08.546Z",
+    "updatedAt": "2026-01-27T09:26:08.546Z",
+    "from": "COMPULINK SYSTEMS",
+    "senderType": "outgoing",
+    "to": "ZIMPLATS",
+    "receivedAt": "2026-01-27T09:42:36.612Z",
+    "status": "received",
+    "weight": "",
+    "dimensions": "",
+    "notes": "",
+    "items": [
+      {
+        "description": "(800)Meganet Qs Cable SM SSA 75M  24-00 9,4MM (230)Meganet CS  D/END FDE  9,40 10mm(230)STREP set (4)Meganet CS OUT DOM 2+1PHS(2C-24F)(1)Meganet CS5 Panel LC D/SC524 PORT(96)Meganet Q5 Midcoupler SM LC Duplex (96)Meganet QS Pigtail SM LC UNJ 1M",
+        "serialNumbers": ["0"]
+      }
+    ]
+  },
+  {
+    "_id": "6978b2ecb2aa6402e2fc8b8c",
+    "createdAt": "2026-01-27T12:43:24.979Z",
+    "updatedAt": "2026-01-27T12:43:24.979Z",
+    "from": "COPIER PARTS",
+    "senderType": "incoming",
+    "to": "COMPULINK SYSTEMES",
+    "receivedAt": "2026-01-27T12:59:53.100Z",
+    "status": "received",
+    "weight": "",
+    "dimensions": "",
+    "notes": "",
+    "items": [
+      {
+        "description": "HP Colour Laserjet Enterprise MFP 5800 ",
+        "serialNumbers": ["CZBBT8105X"]
+      }
+    ]
+  },
+  {
+    "_id": "6978bc4e21bc7ba1e964c5e9",
+    "createdAt": "2026-01-27T13:23:26.501Z",
+    "updatedAt": "2026-01-27T13:23:26.501Z",
+    "from": "OLD MUAL",
+    "senderType": "incoming",
+    "to": "COMPULINK SYSTEMS",
+    "receivedAt": "2026-01-27T13:39:54.275Z",
+    "status": "received",
+    "weight": "",
+    "dimensions": "",
+    "notes": "",
+    "items": [
+      {
+        "description": "(1) HP ZBOOK FURY 16G11Laptop only switches on when connected to a chager(1)HPZBOOK15UG6 Laptop not swiching on(1)HPZBOOK15UG6 Laptop not switching on (1) HPZBOOK firefly 16inch G9 Laptop not switching on",
+        "serialNumbers": ["5CG246054Q", "5CG5032KQ5", "5CG03JJ207", "5CG03552F7"]
+      }
+    ]
+  },
+  {
+    "_id": "6979ab11429bb457607025c9",
+    "createdAt": "2026-01-28T06:22:09.167Z",
+    "updatedAt": "2026-01-28T06:22:09.167Z",
+    "from": "COPIER PARTS",
+    "senderType": "incoming",
+    "to": "COMPULINK SYSTEMES",
+    "receivedAt": "2026-01-28T06:38:37.073Z",
+    "status": "received",
+    "weight": "",
+    "dimensions": "",
+    "notes": "",
+    "items": []
+  },
+  {
+    "_id": "6979cc21bcff02ed7efaa95c",
+    "createdAt": "2026-01-28T08:43:13.434Z",
+    "updatedAt": "2026-01-28T08:43:13.434Z",
+    "from": "FANOOS ELECTRONICS",
+    "senderType": "incoming",
+    "to": "COMPULINK SYSTEMES",
+    "receivedAt": "2026-01-28T08:59:41.543Z",
+    "status": "received",
+    "weight": "",
+    "dimensions": "",
+    "notes": "",
+    "items": [
+      { "description": "Acer ProjectorX1123HP(1)", "serialNumbers": ["MRJSA11005530007"] }
+    ]
+  },
+  {
+    "_id": "6979ffefda16c828516e3d46",
+    "createdAt": "2026-01-28T12:24:15.777Z",
+    "updatedAt": "2026-01-28T12:24:15.777Z",
+    "from": "COMPULINK SYSTEMS",
+    "senderType": "outgoing",
+    "to": "POWERTEL",
+    "receivedAt": "2026-01-28T12:40:43.126Z",
+    "status": "received",
+    "weight": "",
+    "dimensions": "",
+    "notes": "",
+    "items": [
+      {
+        "description": "(1) Samsung Galaxy A36 8/128gb 5g Pouch and shatter glass (1) samsung galaxy AT6 8/128GBGG pouch and shatter glass ",
+        "serialNumbers": ["361741462587613", "350079260496667"]
+      }
+    ]
+  },
+  {
+    "_id": "697a05ea098e36a7b57a93d1",
+    "createdAt": "2026-01-28T12:49:46.056Z",
+    "updatedAt": "2026-01-28T12:49:46.056Z",
+    "from": "NEMSTECH SUPPLIERS",
+    "senderType": "outgoing",
+    "to": "COMPULINK SYSTEMES",
+    "receivedAt": "2026-01-28T13:06:14.124Z",
+    "status": "received",
+    "weight": "",
+    "dimensions": "",
+    "notes": "",
+    "items": [
+      {
+        "description": "(5)CAT6 PATCH CORDS (10) GREY LANSAN (5)HDMI (10M) CABLE (30)50X50 TRUNKING(9) LENGTH",
+        "serialNumbers": ["0"]
+      }
+    ]
+  },
+  {
+    "_id": "697a05ea098e36a7b57a93d1",
+    "createdAt": "2026-01-28T12:49:46.056Z",
+    "updatedAt": "2026-01-28T12:49:46.056Z",
+    "from": "NEMSTECH SUPPLIERS",
+    "senderType": "outgoing",
+    "to": "COMPULINK SYSTEMES",
+    "receivedAt": "2026-01-28T13:06:14.124Z",
+    "status": "received",
+    "weight": "",
+    "dimensions": "",
+    "notes": "",
+    "items": [
+      {
+        "description": "(5)CAT6 PATCH CORDS (10) GREY LANSAN (5)HDMI (10M) CABLE (30)50X50 TRUNKING(9) LENGTH",
+        "serialNumbers": ["0"]
+      }
+    ]
+  },
+  {
+    "_id": "697a12d6613add0b5711d4b6",
+    "createdAt": "2026-01-28T13:44:54.381Z",
+    "updatedAt": "2026-01-28T13:44:54.381Z",
+    "from": "COMPULINK SYSTEMS",
+    "senderType": "outgoing",
+    "to": "CBZ",
+    "receivedAt": "2026-01-28T14:01:22.231Z",
+    "status": "received",
+    "weight": "",
+    "dimensions": "",
+    "notes": "",
+    "items": [
+      { "description": "(1) TP Link Router M 7200 4g (Sample)", "serialNumbers": ["0"] }
+    ]
+  },
+  {
+    "_id": "697b26acb45f3f2a6cefbf0f",
+    "createdAt": "2026-01-29T09:21:48.116Z",
+    "updatedAt": "2026-01-29T09:21:48.117Z",
+    "from": "OLD MUTUAL",
+    "senderType": "incoming",
+    "to": "COMPULINK SYSTEMS",
+    "receivedAt": "2026-01-29T09:38:16.791Z",
+    "status": "received",
+    "weight": "",
+    "dimensions": "",
+    "notes": "",
+    "items": [
+      {
+        "description": "(1)HPZBOOK FIREFLYG8 NOT SWITCHING ON (!)HP ZBOOK FIREFLY G11 TOUCH PAD NOT CLIKING (1) HP ZBOOK FIREFLY G8 NOT SWITCHING ON",
+        "serialNumbers": ["5CG21404MM", "5CG4373YFR", "5CG214053Q"]
+      }
+    ]
+  },
+  {
+    "_id": "6981a82f4790cb1706880090",
+    "createdAt": "2026-02-03T07:47:59.595Z",
+    "updatedAt": "2026-02-03T07:47:59.595Z",
+    "from": "SPELLBOUND",
+    "senderType": "incoming",
+    "to": "COMPULINK SYSTEMS ",
+    "receivedAt": "2026-02-03T08:04:30.867Z",
+    "status": "received",
+    "weight": "",
+    "dimensions": "",
+    "notes": "",
+    "items": [
+      {
+        "description": "SAMSUNG GALAX A36 81128GB 5G POUCH AND SHATTER GLASS SAMSUNG GALAXY A16 8/128GB 5G POUCH SHATTER GLASS",
+        "serialNumbers": ["361741462582613", "350077260496601"]
+      }
+    ]
+  },
+  {
+    "_id": "6981b91ecceb32cf5ee4165e",
+    "createdAt": "2026-02-03T09:00:14.199Z",
+    "updatedAt": "2026-02-03T09:00:14.199Z",
+    "from": "OLD MUTUAL",
+    "senderType": "outgoing",
+    "to": "COMPULINK SYSTEMS",
+    "receivedAt": "2026-02-03T09:16:45.492Z",
+    "status": "received",
+    "weight": "",
+    "dimensions": "",
+    "notes": "",
+    "items": [
+      { "description": "(7) 2 PORT MOLEX FACE PLATE (14)MODESNAP MODULE (7)3M FLYLEADS", "serialNumbers": ["0"] }
+    ]
+  },
+  {
+    "_id": "69843e4390050997356bfcf1",
+    "createdAt": "2026-02-05T06:52:51.295Z",
+    "updatedAt": "2026-02-05T06:52:51.295Z",
+    "from": "MICROMAN",
+    "senderType": "incoming",
+    "to": "COMPULINK SYSTEMS ",
+    "receivedAt": "2026-02-05T07:09:26.218Z",
+    "status": "received",
+    "weight": "",
+    "dimensions": "",
+    "notes": "",
+    "items": [
+      {
+        "description": "M170LOGITECH MOUSE(5) ",
+        "serialNumbers": ["2511ZEACQPA9", "2511ZE1AMX29", "2511ZEBCQP99", "2511ZE8GY5L9", "2511ZEUGY5E9"]
+      }
+    ]
+  },
+  {
+    "_id": "69846a77b096eabab6dd68f3",
+    "createdAt": "2026-02-05T10:01:27.427Z",
+    "updatedAt": "2026-02-05T10:01:27.427Z",
+    "from": "COMPULINK SYSTEMS",
+    "senderType": "outgoing",
+    "to": "NBSZ",
+    "receivedAt": "2026-02-05T10:17:59.231Z",
+    "status": "received",
+    "weight": "",
+    "dimensions": "",
+    "notes": "",
+    "items": [
+      {
+        "description": "(20)CAT6 UTP PATCH CABLE 2M (20) CAT6 UTP PATCH CABLE (3) BRUSH TIDY (3) DEVILS GLUE",
+        "serialNumbers": ["0"]
+      }
+    ]
+  },
+  {
+    "_id": "69846a77b096eabab6dd68f3",
+    "createdAt": "2026-02-05T10:01:27.427Z",
+    "updatedAt": "2026-02-05T10:01:27.427Z",
+    "from": "COMPULINK SYSTEMS",
+    "senderType": "outgoing",
+    "to": "NBSZ",
+    "receivedAt": "2026-02-05T10:17:59.231Z",
+    "status": "received",
+    "weight": "",
+    "dimensions": "",
+    "notes": "",
+    "items": [
+      {
+        "description": "(20)CAT6 UTP PATCH CABLE 2M (20) CAT6 UTP PATCH CABLE (3) BRUSH TIDY (3) DEVILS GLUE",
+        "serialNumbers": ["0"]
+      }
+    ]
+  },
+  {
+    "_id": "698ae3c3796dd7545c37e549",
+    "createdAt": "2026-02-10T07:52:35.418Z",
+    "updatedAt": "2026-02-10T07:52:35.419Z",
+    "from": "  MICROMAN",
+    "senderType": "incoming",
+    "to": "COMPULINK SYSTEMS",
+    "receivedAt": "2026-02-10T08:09:09.302Z",
+    "status": "received",
+    "weight": "",
+    "dimensions": "",
+    "notes": "",
+    "items": [
+      {
+        "description": "CUDY USB -A TO RJ45 GIGABIT ETHERNET ADAPTER (20)",
+        "serialNumbers": [
+          "UE10A253102156",
+          "UE10A253102145",
+          "UE10A253F102049",
+          "UE1OA253102167",
+          "UE10A253102055",
+          "UE10A253102086",
+          "UE10A253102020",
+          "UE10A253102042",
+          "UE10A253102064",
+          "UE10A253102155",
+          "UE10A253102149",
+          "UE10A251704977",
+          "UE10A253102073",
+          "UE10A253102162",
+          "UE10A253102163",
+          "UE10A253102063",
+          "UE10A253102019",
+          "UE10A253102157",
+          "UE10A253102161",
+          "UE10A2531072"
+        ]
+      }
+    ]
+  },
+  {
+    "_id": "698ae6140a3287cd8e591a6a",
+    "createdAt": "2026-02-10T08:02:28.525Z",
+    "updatedAt": "2026-02-10T08:02:28.525Z",
+    "from": "X-ACT IT",
+    "senderType": "incoming",
+    "to": "COMPULINK SYSTEMS",
+    "receivedAt": "2026-02-10T08:19:02.211Z",
+    "status": "received",
+    "weight": "",
+    "dimensions": "",
+    "notes": "",
+    "items": [
+      {
+        "description": "16GBDDR4 FOR LAPTOP (2)8GDDR4PC3L RAM(4)500 GATA SSD(!) HP250 G6 KEYBOARD (1)",
+        "serialNumbers": ["WF1A94CHK6V"]
+      }
+    ]
+  },
+  {
+    "_id": "698ae7951bbef533057b06e2",
+    "createdAt": "2026-02-10T08:08:53.489Z",
+    "updatedAt": "2026-02-10T08:08:53.490Z",
+    "from": "AXIZ PVT LTD",
+    "senderType": "incoming",
+    "to": "COMPULINK SYSTEMS",
+    "receivedAt": "2026-02-10T08:25:27.156Z",
+    "status": "received",
+    "weight": "",
+    "dimensions": "",
+    "notes": "",
+    "items": [
+      { "description": "HP ELITE BOOK 8 GII 14INCH (1)", "serialNumbers": ["5CG54550H0"] }
+    ]
+  },
+  {
+    "_id": "698b3c88ba16b29c307d3c24",
+    "createdAt": "2026-02-10T14:11:20.640Z",
+    "updatedAt": "2026-02-10T14:11:20.641Z",
+    "from": "FIRST PACK ",
+    "senderType": "incoming",
+    "to": "COMPULINK SYSTEMS ",
+    "receivedAt": "2026-02-10T14:27:54.421Z",
+    "status": "received",
+    "weight": "",
+    "dimensions": "",
+    "notes": "",
+    "items": [
+      { "description": "BAG TARGUS BACKPACK TEBO1-70 CAMPUS16 (20)", "serialNumbers": ["O"] }
+    ]
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "_id": "69415dd88617b22546d12f00",
+    "createdAt": "2025-12-16T13:25:44.915Z",
+    "updatedAt": "2025-12-16T13:25:44.915Z",
+    "employee": "694150a460ecb542cf14ee7a",
+    "destination": "Nesciunt soluta cup",
+    "purpose": "Ad voluptas dolor fu",
+    "departureTime": "1977-03-08T19:16:00.000Z",
+    "expectedReturn": "1974-10-11T19:30:00.000Z",
+    "status": "pending",
+    "travelType": "business",
+    "transportation": "other",
+    "accommodation": "Expedita voluptatem ",
+    "estimatedCost": 36,
+    "notes": "Quo sit veritatis al"
+  }
+]

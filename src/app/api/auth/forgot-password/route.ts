@@ -1,42 +1,50 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { getPayload } from 'payload'
 import config from '@/payload.config'
+import { forgotPasswordSchema, getPasswordResetConfig } from '@/lib/password-reset'
 
 export async function POST(request: NextRequest) {
+  const body = await request.json().catch(() => null)
+  const parsed = forgotPasswordSchema.safeParse(body)
+  if (!parsed.success) {
+    return NextResponse.json(
+      { success: false, error: 'Enter a valid email address' },
+      { status: 400 },
+    )
+  }
+
+  if (!getPasswordResetConfig()) {
+    return NextResponse.json(
+      {
+        success: false,
+        error: 'Password reset email is not configured. Please contact your administrator.',
+      },
+      { status: 503 },
+    )
+  }
   try {
     const payload = await getPayload({ config })
-    const body: unknown = await request.json()
-
-    const email = typeof body === 'object' && body !== null && 'email' in body ? (body as any).email : null
-    const normalizedEmail = typeof email === 'string' ? email.trim().toLowerCase() : ''
-
-    if (!normalizedEmail) {
-      return NextResponse.json({ success: false, error: 'Email is required' }, { status: 400 })
-    }
-
-    // For now we disable email delivery because this repo may not be configured with an email adapter.
-    // Payload still generates and stores a reset token, which we return to the client for the reset flow.
-    const token = await payload.forgotPassword({
+    await payload.forgotPassword({
       collection: 'users',
-      data: { email: normalizedEmail },
-      disableEmail: true,
+      data: parsed.data,
+      disableEmail: false,
+      req: { headers: request.headers, url: request.url },
     })
 
     return NextResponse.json({
       success: true,
-      token, // string | null (null when user not found)
-      message: 'If the account exists, a password reset token has been generated.',
+      message:
+        'If an account exists for that email, a password reset link has been sent. Check your inbox and spam folder.',
     })
-  } catch (error) {
-    console.error('Error in /api/auth/forgot-password:', error)
+  } catch {
+    console.error('Password reset email could not be sent. Check the Resend configuration.')
     return NextResponse.json(
       {
         success: false,
-        error: 'Failed to generate password reset token',
-        details: error instanceof Error ? error.message : String(error),
+        error:
+          'Unable to send a password reset email. Please try again later or contact your administrator.',
       },
       { status: 500 },
     )
   }
 }
-

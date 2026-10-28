@@ -1,0 +1,57 @@
+[
+  {
+    "_id": "694150a460ecb542cf14ee7a",
+    "createdAt": "2025-12-16T12:29:24.368Z",
+    "updatedAt": "2025-12-16T12:29:24.368Z",
+    "name": "Lloyd Matare",
+    "employeeId": "Emp-001",
+    "department": "it",
+    "email": "lloydm@compulink.co.zw",
+    "phone": "+263778191278",
+    "isActive": true
+  },
+  {
+    "_id": "694150c460ecb542cf14ee7e",
+    "createdAt": "2025-12-16T12:29:56.013Z",
+    "updatedAt": "2025-12-16T12:29:56.013Z",
+    "name": "Nyasha Mukarwi",
+    "employeeId": "Emp-002",
+    "department": "it",
+    "email": "nyasham@compulink.co.zw",
+    "phone": "+263778191278",
+    "isActive": true
+  },
+  {
+    "_id": "694150e560ecb542cf14ee82",
+    "createdAt": "2025-12-16T12:30:29.347Z",
+    "updatedAt": "2025-12-16T12:30:29.347Z",
+    "name": "Nation Simango",
+    "employeeId": "Emp-003",
+    "department": "it",
+    "email": "nations@compulink.co.zw",
+    "phone": "+263778191278",
+    "isActive": true
+  },
+  {
+    "_id": "6941588e8617b22546d12e35",
+    "createdAt": "2025-12-16T13:03:10.931Z",
+    "updatedAt": "2025-12-16T13:03:10.931Z",
+    "name": "Brain Mazhandu",
+    "employeeId": "Emp-004",
+    "department": "sales",
+    "email": "brainm@compulink.co.zw",
+    "phone": "+263778191278",
+    "isActive": true
+  },
+  {
+    "_id": "6943fb6d0a029abe49cf0556",
+    "createdAt": "2025-12-18T13:02:37.446Z",
+    "updatedAt": "2025-12-18T13:02:37.446Z",
+    "name": "Compulink",
+    "employeeId": "Emp-005",
+    "department": "operations",
+    "email": "dev@compulink.co.zw",
+    "phone": "+263778191278",
+    "isActive": true
+  }
+]

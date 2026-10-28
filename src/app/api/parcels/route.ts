@@ -1,6 +1,7 @@
 // app/api/parcels/route.ts
 import { NextRequest, NextResponse } from 'next/server'
 import { getPayload } from 'payload'
+import type { Where } from 'payload'
 import config from '@/payload.config'
 
 // app/api/parcels/route.ts - Update the GET function
@@ -16,7 +17,7 @@ export async function GET(request: NextRequest) {
     const dateFrom = searchParams.get('dateFrom')
     const dateTo = searchParams.get('dateTo')
 
-    const where: any = {}
+    const where: Where = {}
 
     if (status) {
       where.status = { equals: status }
@@ -27,8 +28,8 @@ export async function GET(request: NextRequest) {
         { from: { contains: search } },
         { to: { contains: search } },
         { notes: { contains: search } },
-        // Note: Cannot directly query nested array fields in Payload
-        // We'll filter results client-side or use a different approach
+        { 'items.description': { contains: search } },
+        { 'items.serialNumbers.serialNumber': { contains: search } },
       ]
     }
 
@@ -53,48 +54,49 @@ export async function GET(request: NextRequest) {
       depth: 1,
     })
 
-    // If there's a search term, we need to filter results to include item descriptions
-    let filteredDocs = result.docs
-    if (search) {
-      filteredDocs = result.docs.filter((parcel: any) => {
-        // Check basic fields
-        if (
-          parcel.from?.toLowerCase().includes(search.toLowerCase()) ||
-          parcel.to?.toLowerCase().includes(search.toLowerCase()) ||
-          parcel.notes?.toLowerCase().includes(search.toLowerCase())
-        ) {
-          return true
-        }
-
-        // Check items and their serial numbers
-        if (parcel.items && Array.isArray(parcel.items)) {
-          for (const item of parcel.items) {
-            // Check item description
-            if (item.description?.toLowerCase().includes(search.toLowerCase())) {
-              return true
-            }
-
-            // Check serial numbers
-            if (item.serialNumbers && Array.isArray(item.serialNumbers)) {
-              for (const serial of item.serialNumbers) {
-                if (serial.serialNumber?.toLowerCase().includes(search.toLowerCase())) {
-                  return true
-                }
-              }
-            }
-          }
-        }
-
-        return false
-      })
-    }
+    // Summary cards describe the whole collection, not just the current table page.
+    const today = new Date()
+    today.setHours(0, 0, 0, 0)
+    const tomorrow = new Date(today)
+    tomorrow.setDate(tomorrow.getDate() + 1)
+    const [total, pending, collectedToday, urgent] = await Promise.all([
+      payload.count({ collection: 'parcel-logs' }),
+      payload.count({
+        collection: 'parcel-logs',
+        where: { status: { equals: 'received' } },
+      }),
+      payload.count({
+        collection: 'parcel-logs',
+        where: {
+          and: [
+            { status: { equals: 'collected' } },
+            { collectedAt: { greater_than_equal: today.toISOString() } },
+            { collectedAt: { less_than: tomorrow.toISOString() } },
+          ],
+        },
+      }),
+      payload.count({
+        collection: 'parcel-logs',
+        where: {
+          or: ['urgent', 'immediate', 'asap'].map((word) => ({
+            notes: { contains: word },
+          })),
+        },
+      }),
+    ])
 
     return NextResponse.json({
       success: true,
-      data: filteredDocs,
+      data: result.docs,
+      stats: {
+        totalParcels: total.totalDocs,
+        pendingParcels: pending.totalDocs,
+        collectedToday: collectedToday.totalDocs,
+        urgentParcels: urgent.totalDocs,
+      },
       pagination: {
-        totalDocs: search ? filteredDocs.length : result.totalDocs,
-        totalPages: search ? Math.ceil(filteredDocs.length / limit) : result.totalPages,
+        totalDocs: result.totalDocs,
+        totalPages: result.totalPages,
         page: result.page,
         limit: result.limit,
         hasNextPage: result.hasNextPage,

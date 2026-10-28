@@ -12,14 +12,18 @@
     "generate:types": "cross-env NODE_OPTIONS=--no-deprecation payload generate:types",
     "lint": "cross-env NODE_OPTIONS=--no-deprecation next lint",
     "payload": "cross-env NODE_OPTIONS=--no-deprecation payload",
+    "seed": "cross-env NODE_OPTIONS=--no-deprecation payload run scripts/seed.ts",
+    "seed:fresh": "cross-env NODE_OPTIONS=--no-deprecation payload run scripts/seed.ts -- --fresh",
+    "seed:verify": "cross-env NODE_OPTIONS=--no-deprecation payload run scripts/verify-seed.ts",
     "start": "cross-env NODE_OPTIONS=--no-deprecation next start",
-    "test": "pnpm run test:int && pnpm run test:e2e",
-    "test:e2e": "cross-env NODE_OPTIONS=\"--no-deprecation --no-experimental-strip-types\" pnpm exec playwright test",
+    "test": "npm run test:int && npm run test:e2e",
+    "test:e2e": "cross-env NODE_OPTIONS=\"--no-deprecation --no-experimental-strip-types\" playwright test",
     "test:int": "cross-env NODE_OPTIONS=--no-deprecation vitest run --config ./vitest.config.mts"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
-    "@payloadcms/db-mongodb": "3.68.3",
+    "@payloadcms/db-postgres": "3.68.3",
+    "@payloadcms/email-resend": "3.68.3",
     "@payloadcms/next": "3.68.3",
     "@payloadcms/richtext-lexical": "3.68.3",
     "@payloadcms/ui": "3.68.3",
@@ -100,14 +104,6 @@
     "vitest": "3.2.3"
   },
   "engines": {
-    "node": "^18.20.2 || >=20.9.0",
-    "pnpm": "^9 || ^10"
-  },
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "sharp",
-      "esbuild",
-      "unrs-resolver"
-    ]
+    "node": "^18.20.2 || >=20.9.0"
   }
 }

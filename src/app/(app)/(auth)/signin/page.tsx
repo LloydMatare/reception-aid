@@ -16,9 +16,14 @@ export default function Signin() {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
   const [showPassword, setShowPassword] = useState(false)
+  const [passwordReset, setPasswordReset] = useState(false)
 
   // Check if user is already logged in
   useEffect(() => {
+    if (new URLSearchParams(window.location.search).get('passwordReset') === 'success') {
+      setPasswordReset(true)
+      return
+    }
     const checkAuth = async () => {
       const token = localStorage.getItem('token')
       const userData = localStorage.getItem('user')
@@ -114,6 +119,11 @@ export default function Signin() {
         {/* Login Card */}
         <div className="bg-white rounded-2xl shadow-xl p-8">
           <h2 className="text-2xl font-bold text-gray-900 mb-6">Welcome Back</h2>
+          {passwordReset && (
+            <p role="status" className="bg-green-50 text-green-800 p-4 rounded mb-4 text-sm">
+              Your password has been changed. Sign in with your new password.
+            </p>
+          )}
 
           <form className="space-y-6" onSubmit={handleSubmit}>
             {error && (

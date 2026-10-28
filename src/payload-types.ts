@@ -100,7 +100,7 @@ export interface Config {
     'payload-migrations': PayloadMigrationsSelect<false> | PayloadMigrationsSelect<true>;
   };
   db: {
-    defaultIDType: string;
+    defaultIDType: number;
   };
   fallbackLocale: null;
   globals: {};
@@ -137,13 +137,13 @@ export interface UserAuthOperations {
  * via the `definition` "appointments".
  */
 export interface Appointment {
-  id: string;
+  id: number;
   visitorName: string;
   company: string;
   email: string;
   phone: string;
   purpose: string;
-  employeeToMeet: string | Employee;
+  employeeToMeet: number | Employee;
   /**
    * Fallback if no employee relationship
    */
@@ -160,8 +160,8 @@ export interface Appointment {
   sendReminder?: boolean | null;
   reminderSent?: boolean | null;
   reminderSentAt?: string | null;
-  createdBy?: (string | null) | User;
-  updatedBy?: (string | null) | User;
+  createdBy?: (number | null) | User;
+  updatedBy?: (number | null) | User;
   updatedAt: string;
   createdAt: string;
 }
@@ -170,7 +170,7 @@ export interface Appointment {
  * via the `definition` "employees".
  */
 export interface Employee {
-  id: string;
+  id: number;
   name: string;
   employeeId: string;
   department?: ('it' | 'hr' | 'finance' | 'operations' | 'sales') | null;
@@ -185,7 +185,7 @@ export interface Employee {
  * via the `definition` "users".
  */
 export interface User {
-  id: string;
+  id: number;
   name: string;
   role: 'admin' | 'reception' | 'security' | 'employee';
   department?: string | null;
@@ -214,7 +214,7 @@ export interface User {
  * via the `definition` "media".
  */
 export interface Media {
-  id: string;
+  id: number;
   alt?: string | null;
   updatedAt: string;
   createdAt: string;
@@ -259,13 +259,13 @@ export interface Media {
  * via the `definition` "visitors".
  */
 export interface Visitor {
-  id: string;
+  id: number;
   name: string;
   email?: string | null;
   phone: string;
   company?: string | null;
   purpose: string;
-  employeeToMeet?: (string | null) | Employee;
+  employeeToMeet?: (number | null) | Employee;
   employeeToMeetName?: string | null;
   checkInTime?: string | null;
   checkOutTime?: string | null;
@@ -280,8 +280,8 @@ export interface Visitor {
  * via the `definition` "travel-logs".
  */
 export interface TravelLog {
-  id: string;
-  employee: string | Employee;
+  id: number;
+  employee: number | Employee;
   destination: string;
   purpose: string;
   departureTime: string;
@@ -301,7 +301,7 @@ export interface TravelLog {
  * via the `definition` "parcel-logs".
  */
 export interface ParcelLog {
-  id: string;
+  id: number;
   items?:
     | {
         description: string;
@@ -331,8 +331,8 @@ export interface ParcelLog {
  * via the `definition` "phone-calls".
  */
 export interface PhoneCall {
-  id: string;
-  employee: string | Employee;
+  id: number;
+  employee: number | Employee;
   callerName?: string | null;
   callerNumber: string;
   purpose: string;
@@ -348,7 +348,7 @@ export interface PhoneCall {
  * via the `definition` "vehicles".
  */
 export interface Vehicle {
-  id: string;
+  id: number;
   registrationNumber: string;
   vehicleType: 'company-car' | 'employee-personal' | 'visitor' | 'delivery';
   ownerName: string;
@@ -367,7 +367,7 @@ export interface Vehicle {
  * via the `definition` "clients".
  */
 export interface Client {
-  id: string;
+  id: number;
   companyName: string;
   contactPerson: string;
   email: string;
@@ -381,12 +381,12 @@ export interface Client {
   notes?: string | null;
   documents?:
     | {
-        document?: (string | null) | Media;
+        document?: (number | null) | Media;
         description?: string | null;
         id?: string | null;
       }[]
     | null;
-  assignedEmployee?: (string | null) | Employee;
+  assignedEmployee?: (number | null) | Employee;
   updatedAt: string;
   createdAt: string;
 }
@@ -395,7 +395,7 @@ export interface Client {
  * via the `definition` "payload-kv".
  */
 export interface PayloadKv {
-  id: string;
+  id: number;
   key: string;
   data:
     | {
@@ -412,52 +412,52 @@ export interface PayloadKv {
  * via the `definition` "payload-locked-documents".
  */
 export interface PayloadLockedDocument {
-  id: string;
+  id: number;
   document?:
     | ({
         relationTo: 'appointments';
-        value: string | Appointment;
+        value: number | Appointment;
       } | null)
     | ({
         relationTo: 'users';
-        value: string | User;
+        value: number | User;
       } | null)
     | ({
         relationTo: 'media';
-        value: string | Media;
+        value: number | Media;
       } | null)
     | ({
         relationTo: 'visitors';
-        value: string | Visitor;
+        value: number | Visitor;
       } | null)
     | ({
         relationTo: 'travel-logs';
-        value: string | TravelLog;
+        value: number | TravelLog;
       } | null)
     | ({
         relationTo: 'parcel-logs';
-        value: string | ParcelLog;
+        value: number | ParcelLog;
       } | null)
     | ({
         relationTo: 'phone-calls';
-        value: string | PhoneCall;
+        value: number | PhoneCall;
       } | null)
     | ({
         relationTo: 'vehicles';
-        value: string | Vehicle;
+        value: number | Vehicle;
       } | null)
     | ({
         relationTo: 'employees';
-        value: string | Employee;
+        value: number | Employee;
       } | null)
     | ({
         relationTo: 'clients';
-        value: string | Client;
+        value: number | Client;
       } | null);
   globalSlug?: string | null;
   user: {
     relationTo: 'users';
-    value: string | User;
+    value: number | User;
   };
   updatedAt: string;
   createdAt: string;
@@ -467,10 +467,10 @@ export interface PayloadLockedDocument {
  * via the `definition` "payload-preferences".
  */
 export interface PayloadPreference {
-  id: string;
+  id: number;
   user: {
     relationTo: 'users';
-    value: string | User;
+    value: number | User;
   };
   key?: string | null;
   value?:
@@ -490,7 +490,7 @@ export interface PayloadPreference {
  * via the `definition` "payload-migrations".
  */
 export interface PayloadMigration {
-  id: string;
+  id: number;
   name?: string | null;
   batch?: number | null;
   updatedAt: string;

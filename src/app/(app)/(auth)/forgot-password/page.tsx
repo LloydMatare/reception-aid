@@ -1,7 +1,6 @@
 'use client'
 
 import React, { useState } from 'react'
-import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import { Building } from 'lucide-react'
 import { Label } from '@/components/ui/label'
@@ -11,14 +10,11 @@ import { Card, CardContent } from '@/components/ui/card'
 
 type ForgotPasswordResponse = {
   success?: boolean
-  token?: string | null
   message?: string
   error?: string
 }
 
 export default function ForgotPasswordPage() {
-  const router = useRouter()
-
   const [email, setEmail] = useState('')
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
@@ -44,16 +40,9 @@ export default function ForgotPasswordPage() {
         return
       }
 
-      // This repo currently generates the token but doesn't send email.
-      // If token is returned, we can redirect to the reset page.
-      if (typeof data?.token === 'string' && data.token.length > 0) {
-        router.push(`/reset-password?token=${encodeURIComponent(data.token)}`)
-        return
-      }
-
       setMessage(
         data?.message ||
-          'If the account exists, a reset token will be generated. Please check your inbox or contact support.',
+          'If an account exists for that email, a password reset link has been sent. Check your inbox and spam folder.',
       )
     } catch {
       setError('Network error. Please try again.')
@@ -87,7 +76,11 @@ export default function ForgotPasswordPage() {
               </div>
             )}
 
-            {message && <div className="bg-blue-50 border-l-4 border-blue-500 p-4 rounded mb-4 text-sm">{message}</div>}
+            {message && (
+              <div className="bg-blue-50 border-l-4 border-blue-500 p-4 rounded mb-4 text-sm">
+                {message}
+              </div>
+            )}
 
             <form className="space-y-6" onSubmit={handleSubmit}>
               <div className="space-y-2">
@@ -130,4 +123,3 @@ export default function ForgotPasswordPage() {
     </div>
   )
 }
-

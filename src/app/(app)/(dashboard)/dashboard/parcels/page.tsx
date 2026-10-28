@@ -39,11 +39,12 @@ import {
 import ParcelCheckin from '@/components/parcel-checkin'
 import { toast } from 'sonner'
 import Link from 'next/link'
+import type { ParcelLog } from '@/payload-types'
 
 // Update the Parcel interface
 interface Parcel {
   id: string
-  serialNumbers?: Array<{ id: string; serialNumber: string; description: string }>
+  items?: ParcelLog['items']
   from: string
   senderType: 'incoming' | 'outgoing' | 'other'
   to: string // Changed to string
@@ -61,6 +62,12 @@ interface Parcel {
 interface ParcelsResponse {
   success: boolean
   data: Parcel[]
+  stats: {
+    totalParcels: number
+    pendingParcels: number
+    collectedToday: number
+    urgentParcels: number
+  }
   pagination?: {
     totalDocs: number
     totalPages: number
@@ -79,6 +86,7 @@ export default function ParcelsPage() {
   const [refreshing, setRefreshing] = useState(false)
   const [page, setPage] = useState(1)
   const [pagination, setPagination] = useState<ParcelsResponse['pagination'] | null>(null)
+  const [stats, setStats] = useState<ParcelsResponse['stats'] | null>(null)
 
   // Check if user is admin (you'll need to implement your own auth logic)
   const isAdmin = true // Replace with actual admin check
@@ -104,6 +112,8 @@ export default function ParcelsPage() {
       if (result.success) {
         setParcels(result.data)
         setPagination(result.pagination ?? null)
+        setStats(result.stats ?? null)
+        setPage(result.pagination?.page ?? pageOverride ?? page)
       } else {
         console.error('Failed to fetch parcels:', result)
         toast.error('Failed to load parcels')
@@ -123,21 +133,10 @@ export default function ParcelsPage() {
     fetchParcels(value, 1)
   }
 
-  // Stats calculations
-  const totalParcels = parcels.length
-  const pendingParcels = parcels.filter((p) => p.status === 'received').length
-  const collectedToday = parcels.filter(
-    (p) =>
-      p.status === 'collected' &&
-      p.collectedAt &&
-      new Date(p.collectedAt).toDateString() === new Date().toDateString(),
-  ).length
-  const urgentParcels = parcels.filter(
-    (p) =>
-      p.notes?.toLowerCase().includes('urgent') ||
-      p.notes?.toLowerCase().includes('immediate') ||
-      p.notes?.toLowerCase().includes('asap'),
-  ).length
+  const totalParcels = stats?.totalParcels ?? pagination?.totalDocs ?? 0
+  const pendingParcels = stats?.pendingParcels ?? 0
+  const collectedToday = stats?.collectedToday ?? 0
+  const urgentParcels = stats?.urgentParcels ?? 0
 
   const handleMarkAsCollected = async (parcelId: string) => {
     try {
@@ -286,43 +285,56 @@ export default function ParcelsPage() {
 
     return parcels.map((parcel) => (
       <TableRow key={parcel.id}>
-        <TableCell>
+        <TableCell className="align-top whitespace-normal [overflow-wrap:anywhere]">
           <div>
             <p className="font-medium">{parcel.from}</p>
             <div className="mt-1">{getSenderTypeBadge(parcel.senderType)}</div>
           </div>
         </TableCell>
-        <TableCell>
+        <TableCell className="align-top whitespace-normal [overflow-wrap:anywhere]">
           <p className="font-medium">{parcel.to}</p>
         </TableCell>
-        <TableCell className="max-w-xs">
-          {parcel.serialNumbers && parcel.serialNumbers.length > 0 ? (
-            <div className="space-y-1">
-              {parcel.serialNumbers.map((item, index) => (
-                <div key={index} className="text-sm">
-                  <span className="font-medium">{item.description}:</span>
-                  <span className="text-muted-foreground ml-2">{item.serialNumber}</span>
-                </div>
-              ))}
+        <TableCell className="align-top whitespace-normal [overflow-wrap:anywhere]">
+          <div
+            role="region"
+            aria-label={`Items for parcel from ${parcel.from} to ${parcel.to}`}
+            tabIndex={0}
+            className="max-h-48 overflow-y-auto pr-2 rounded-sm focus-visible:outline-2 focus-visible:outline-ring"
+          >
+            {parcel.items && parcel.items.length > 0 ? (
+              <div className="space-y-1">
+                {parcel.items.map((item, index) => (
+                  <div key={item.id ?? index} className="text-sm">
+                    <p className="font-medium">{item.description}</p>
+                    {item.serialNumbers && item.serialNumbers.length > 0 && (
+                      <ul className="text-muted-foreground space-y-1">
+                        {item.serialNumbers.map((serial, serialIndex) => (
+                          <li key={serial.id ?? serialIndex}>{serial.serialNumber}</li>
+                        ))}
+                      </ul>
+                    )}
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <p className="text-muted-foreground">No items recorded</p>
+            )}
+            {parcel.notes && (
+              <p className="text-xs text-muted-foreground mt-2">Note: {parcel.notes}</p>
+            )}
+            <div className="text-xs text-muted-foreground mt-1">
+              {parcel.weight && <span>{parcel.weight} • </span>}
+              {parcel.dimensions && <span>{parcel.dimensions}</span>}
             </div>
-          ) : (
-            <p className="text-muted-foreground">No items recorded</p>
-          )}
-          {parcel.notes && (
-            <p className="text-xs text-muted-foreground mt-2">Note: {parcel.notes}</p>
-          )}
-          <div className="text-xs text-muted-foreground mt-1">
-            {parcel.weight && <span>{parcel.weight} • </span>}
-            {parcel.dimensions && <span>{parcel.dimensions}</span>}
           </div>
         </TableCell>
-        <TableCell>
+        <TableCell className="align-top whitespace-normal">
           <div>
             <p className="text-sm">{formatDate(parcel.receivedAt)}</p>
             <p className="text-xs text-muted-foreground">{formatTime(parcel.receivedAt)}</p>
           </div>
         </TableCell>
-        <TableCell>
+        <TableCell className="align-top whitespace-normal">
           {getStatusBadge(parcel.status)}
           {parcel.collectedAt && (
             <p className="text-xs text-muted-foreground mt-1">
@@ -330,7 +342,7 @@ export default function ParcelsPage() {
             </p>
           )}
         </TableCell>
-        <TableCell className="text-right">
+        <TableCell className="text-right align-top">
           <div className="flex justify-end gap-2">
             <Link href={`/dashboard/parcels/${parcel.id}`}>
               <Button variant="ghost" size="icon" title="View Details">
@@ -366,7 +378,7 @@ export default function ParcelsPage() {
   }
 
   return (
-    <div className="space-y-6">
+    <div className="min-w-0 w-full space-y-6">
       {/* Header */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
@@ -455,7 +467,7 @@ export default function ParcelsPage() {
       </div>
 
       {/* Search and Filters */}
-      <Card>
+      <Card className="min-w-0 max-w-full">
         <CardHeader>
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
             <CardTitle>Parcel Tracking</CardTitle>
@@ -482,8 +494,16 @@ export default function ParcelsPage() {
           </div>
         </CardHeader>
         <CardContent>
-          <div className="rounded-md border">
-            <Table>
+          <div className="min-w-0 overflow-hidden rounded-md border">
+            <Table className="table-fixed min-w-[1100px]">
+              <colgroup>
+                <col className="w-[16%]" />
+                <col className="w-[16%]" />
+                <col className="w-[28%]" />
+                <col className="w-[13%]" />
+                <col className="w-[13%]" />
+                <col className="w-[14%]" />
+              </colgroup>
               <TableHeader>
                 <TableRow>
                   <TableHead>From</TableHead>
@@ -510,14 +530,23 @@ export default function ParcelsPage() {
             >
               Previous
             </Button>
-            <div className="text-sm text-muted-foreground">
-              Page <span className="font-medium text-foreground">{page}</span>
-              {pagination?.totalPages ? (
-                <>
-                  {' '}
-                  of <span className="font-medium text-foreground">{pagination.totalPages}</span>
-                </>
-              ) : null}
+            <div className="text-sm text-muted-foreground text-center">
+              <div>
+                Showing {parcels.length > 0 && pagination ? (page - 1) * pagination.limit + 1 : 0}–
+                {parcels.length > 0 && pagination
+                  ? (page - 1) * pagination.limit + parcels.length
+                  : parcels.length}{' '}
+                of {pagination?.totalDocs ?? 0} parcels
+              </div>
+              <div>
+                Page <span className="font-medium text-foreground">{page}</span>
+                {pagination?.totalPages ? (
+                  <>
+                    {' '}
+                    of <span className="font-medium text-foreground">{pagination.totalPages}</span>
+                  </>
+                ) : null}
+              </div>
             </div>
             <Button
               variant="outline"

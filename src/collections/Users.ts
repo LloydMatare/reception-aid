@@ -1,5 +1,6 @@
 // collections/Users.ts
 import { CollectionConfig } from 'payload'
+import { generateResetEmail } from '../lib/password-reset'
 
 export const Users: CollectionConfig = {
   slug: 'users',
@@ -7,6 +8,11 @@ export const Users: CollectionConfig = {
     useAsTitle: 'email',
   },
   auth: {
+    forgotPassword: {
+      expiration: 60 * 60 * 1000,
+      generateEmailHTML: (args) => generateResetEmail(args?.token),
+      generateEmailSubject: () => 'Reset your Reception Aid password',
+    },
     tokenExpiration: 7200, // 2 hours
     cookies: {
       secure: process.env.NODE_ENV === 'production',

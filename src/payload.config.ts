@@ -1,4 +1,5 @@
-import { mongooseAdapter } from '@payloadcms/db-mongodb'
+import { postgresAdapter } from '@payloadcms/db-postgres'
+import { resendAdapter } from '@payloadcms/email-resend'
 import { lexicalEditor } from '@payloadcms/richtext-lexical'
 import path from 'path'
 import { buildConfig } from 'payload'
@@ -15,11 +16,27 @@ import { Vehicles } from './collections/Vehicles'
 import { Employees } from './collections/Employees'
 import { Clients } from './collections/Client'
 import { Appointments } from './collections/Appointment'
+import { getPasswordResetConfig } from './lib/password-reset'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
+const resetEmail = getPasswordResetConfig()
 
 export default buildConfig({
+  email: resetEmail
+    ? resendAdapter({
+        apiKey: resetEmail.apiKey,
+        defaultFromAddress: resetEmail.defaultFromAddress,
+        defaultFromName: resetEmail.defaultFromName,
+      })
+    : () => ({
+        name: 'unconfigured',
+        defaultFromAddress: 'noreply@example.com',
+        defaultFromName: 'Reception Aid',
+        sendEmail: async () => {
+          throw new Error('Resend email is not configured')
+        },
+      }),
   admin: {
     user: Users.slug,
     importMap: {
@@ -43,8 +60,11 @@ export default buildConfig({
   typescript: {
     outputFile: path.resolve(dirname, 'payload-types.ts'),
   },
-  db: mongooseAdapter({
-    url: process.env.DATABASE_URI || '',
+  db: postgresAdapter({
+    pool: {
+      // Accepts either name so existing deployments using DATABASE_URL keep working.
+      connectionString: process.env.DATABASE_URI || process.env.DATABASE_URL || '',
+    },
   }),
   sharp,
   plugins: [],

@@ -45,8 +45,8 @@ function ResetPasswordInner() {
       setError('Passwords do not match.')
       return
     }
-    if (password.length < 8) {
-      setError('Password must be at least 8 characters.')
+    if (password.length < 8 || password.length > 128) {
+      setError('Password must be between 8 and 128 characters.')
       return
     }
 
@@ -65,7 +65,9 @@ function ResetPasswordInner() {
         return
       }
 
-      router.push('/signin')
+      localStorage.removeItem('token')
+      localStorage.removeItem('user')
+      router.replace('/signin?passwordReset=success')
     } catch {
       setError('Network error. Please try again.')
     } finally {
@@ -91,10 +93,21 @@ function ResetPasswordInner() {
         <Card>
           <CardContent className="p-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-6">Reset Password</h2>
+            {!token && (
+              <p className="text-sm text-red-700 mb-4">
+                This page requires the reset link from your email.{' '}
+                <Link href="/forgot-password" className="underline">
+                  Request a new reset link
+                </Link>
+              </p>
+            )}
 
             {error && (
               <div className="bg-red-50 border-l-4 border-red-500 p-4 rounded mb-4">
                 <p className="text-sm text-red-700">{error}</p>
+                <Link href="/forgot-password" className="text-sm underline">
+                  Request a new reset link
+                </Link>
               </div>
             )}
 
@@ -109,6 +122,8 @@ function ResetPasswordInner() {
                     name="password"
                     type={showPassword ? 'text' : 'password'}
                     autoComplete="new-password"
+                    minLength={8}
+                    maxLength={128}
                     required
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
@@ -127,7 +142,10 @@ function ResetPasswordInner() {
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="confirmPassword" className="block text-sm font-medium text-gray-700">
+                <Label
+                  htmlFor="confirmPassword"
+                  className="block text-sm font-medium text-gray-700"
+                >
                   Confirm Password
                 </Label>
                 <Input
@@ -135,6 +153,8 @@ function ResetPasswordInner() {
                   name="confirmPassword"
                   type="password"
                   autoComplete="new-password"
+                  minLength={8}
+                  maxLength={128}
                   required
                   value={confirmPassword}
                   onChange={(e) => setConfirmPassword(e.target.value)}
@@ -145,7 +165,7 @@ function ResetPasswordInner() {
 
               <Button
                 type="submit"
-                disabled={loading}
+                disabled={loading || !token}
                 className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-3 px-4 rounded-lg font-semibold hover:from-blue-700 hover:to-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed transition"
               >
                 {loading ? 'Resetting...' : 'Reset Password'}
@@ -180,4 +200,3 @@ export default function ResetPasswordPage() {
     </Suspense>
   )
 }
-
