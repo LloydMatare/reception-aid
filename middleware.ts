@@ -1,78 +1,45 @@
-// middleware.ts - UPDATED
-import { NextResponse } from 'next/server'
-import type { NextRequest } from 'next/server'
+// middleware.ts - UPDATED WITH CLERK
+import { clerkMiddleware, createRouteMatcher } from '@clerk/nextjs/server'
 
-export function middleware(request: NextRequest) {
-  const token = request.cookies.get('payload-token')?.value
-  const user = request.cookies.get('user')?.value
+const isPublicRoute = createRouteMatcher([
+  '/sign-in(.*)',
+  '/sign-up(.*)',
+  '/signin(.*)',
+  '/register(.*)',
+  '/forgot-password(.*)',
+  '/reset-password(.*)',
+  '/api/users/login(.*)',
+  '/api/auth/register(.*)',
+  '/api/auth/forgot-password(.*)',
+  '/api/auth/reset-password(.*)',
+  '/api/visitors(.*)',
+  '/api/debug(.*)',
+])
 
-  const { pathname } = request.nextUrl
+export default clerkMiddleware(async (auth, req) => {
+  const { pathname } = req.nextUrl
 
-  // 1. ALLOW PAYLOAD ADMIN ROUTES THROUGH WITHOUT AUTH CHECK
-  // Payload CMS has its own authentication system
+  // Allow Payload admin routes
   if (pathname.startsWith('/admin')) {
-    return NextResponse.next()
+    return
   }
 
-  // 2. Allow Payload API routes
+  // Allow Payload API routes
   if (pathname.startsWith('/api/payload')) {
-    return NextResponse.next()
+    return
   }
 
-  // 3. Public paths that don't require authentication
-  const publicPaths = [
-    '/signin',
-    '/register',
-    '/forgot-password',
-    '/reset-password',
-    '/api/users/login',
-    '/api/auth/register',
-    '/api/auth/forgot-password',
-    '/api/auth/reset-password',
-    '/api/visitors', // Allow visitor API
-    '/api/debug', // Allow debug endpoints
-  ]
-
-  const isPublicPath = publicPaths.some((path) => pathname.startsWith(path))
-
-  if (isPublicPath) {
-    return NextResponse.next()
+  if (isPublicRoute(req)) {
+    return
   }
 
-  // 4. If no token and trying to access protected route, redirect to signin
-  if (!token && !isPublicPath) {
-    const signinUrl = new URL('/signin', request.url)
-    signinUrl.searchParams.set('redirect', pathname)
-    return NextResponse.redirect(signinUrl)
-  }
+  await auth.protect()
+})
 
-  // 5. Role-based access control (only for your custom app, not Payload)
-  if (user) {
-    try {
-      const userData = JSON.parse(user)
-
-      // Security routes - only security role can access
-      if (pathname.startsWith('/security') && userData.role !== 'security') {
-        return NextResponse.redirect(new URL('/unauthorized', request.url))
-      }
-
-      // Reception routes - only reception and admin can access
-      if (pathname.startsWith('/reception') && !['reception', 'admin'].includes(userData.role)) {
-        return NextResponse.redirect(new URL('/unauthorized', request.url))
-      }
-
-      // Admin routes - only admin can access
-      // Note: This is for YOUR /admin routes, not Payload's /admin
-      if (pathname.startsWith('/dashboard/admin') && userData.role !== 'admin') {
-        return NextResponse.redirect(new URL('/unauthorized', request.url))
-      }
-    } catch (error) {
-      // Invalid user data, redirect to signin
-      return NextResponse.redirect(new URL('/signin', request.url))
-    }
-  }
-
-  return NextResponse.next()
+export const config = {
+  matcher: [
+    '/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)',
+  ],
 }
 
 export const config = {
