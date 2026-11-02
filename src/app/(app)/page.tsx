@@ -21,7 +21,7 @@ export default function Home() {
   const features = [
     {
       icon: <Users className="h-8 w-8" />,
-      title: 'Visitor Management',
+      title: 'Visitor Management Reception Aide',
       description:
         'Efficient check-in/check-out system for all office visitors with digital visitor badges.',
       color: 'bg-blue-100 text-blue-600',
