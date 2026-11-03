@@ -41,17 +41,3 @@ export const config = {
     '/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)',
   ],
 }
-
-export const config = {
-  matcher: [
-    /*
-     * Match all request paths except:
-     * 1. /api/trpc (leave this to tRPC)
-     * 2. /_next/static (static files)
-     * 3. /_next/image (image optimization files)
-     * 4. /favicon.ico (favicon file)
-     * 5. /public (public files)
-     */
-    '/((?!api/trpc|_next/static|_next/image|favicon.ico|public).*)',
-  ],
-}
